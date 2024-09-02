@@ -59,6 +59,12 @@ declare namespace API {
     message?: string;
   };
 
+  type BaseResponsestring = {
+    code?: number;
+    data?: string;
+    message?: string;
+  };
+
   type BaseResponseUser = {
     code?: number;
     data?: User;
@@ -102,6 +108,7 @@ declare namespace API {
     method?: string;
     name?: string;
     requestHeader?: string;
+    requestParams?: string;
     respondsHeader?: string;
     status?: number;
     updateTime?: string;
@@ -114,8 +121,14 @@ declare namespace API {
     method?: string;
     name?: string;
     requestHeader?: string;
+    requestParams?: string;
     respondsHeader?: string;
     url?: string;
+  };
+
+  type InterfaceInfoInvokeRequest = {
+    id?: number;
+    userRequestParams?: string;
   };
 
   type InterfaceInfoUpdateRequest = {
@@ -124,6 +137,7 @@ declare namespace API {
     method?: string;
     name?: string;
     requestHeader?: string;
+    requestParams?: string;
     respondsHeader?: string;
     status?: number;
     url?: string;
@@ -138,6 +152,7 @@ declare namespace API {
     name?: string;
     pageSize?: number;
     requestHeader?: string;
+    requestParams?: string;
     respondsHeader?: string;
     sortField?: string;
     sortOrder?: string;
@@ -155,6 +170,7 @@ declare namespace API {
     name?: string;
     pageSize?: number;
     requestHeader?: string;
+    requestParams?: string;
     respondsHeader?: string;
     sortField?: string;
     sortOrder?: string;
@@ -398,10 +414,12 @@ declare namespace API {
   };
 
   type User = {
+    accessKey?: string;
     createTime?: string;
     gender?: number;
     id?: number;
     isDelete?: number;
+    secretKey?: string;
     updateTime?: string;
     userAccount?: string;
     userAvatar?: string;
